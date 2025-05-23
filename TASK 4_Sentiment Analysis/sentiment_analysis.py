@@ -1,10 +1,9 @@
-# Import libraries
 import pandas as pd
 from textblob import TextBlob
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv(r"C:\Users\admin\OneDrive\Desktop\CODE ALPHA\TASK 4_Sentiment Analysis\reviews.csv", quotechar='"')
+df = pd.read_csv("reviews.csv", quotechar='"')
 
 def get_sentiment(text):
     polarity = TextBlob(str(text)).sentiment.polarity
@@ -21,6 +20,4 @@ print(df)
 
 sns.countplot(x="Sentiment", data=df)
 plt.title("Sentiment Distribution")
-plt.xlabel("Sentiment")
-plt.ylabel("Count")
 plt.show()
